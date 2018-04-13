@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let playerList = PlayerList()
+        
+        //Access the PlayersViewController and set its player list
+        let playersController = window!.rootViewController as! PlayersViewController
+        playersController.playerList = playerList
+        
         return true
     }
 
