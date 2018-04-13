@@ -62,15 +62,22 @@ class PlayersViewController: UITableViewController {
         //let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
         
         //Get a new or recycled cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PlayerCell", for: indexPath) as! PlayerCell
         
         //Set the text on the cell with the desription of the player
         //that is at the nth index of players, where n = row this cell
         //will appear in on the tableview
         let player = playerList.allPlayers[indexPath.row]
         
-        cell.textLabel?.text = player.name
-        cell.detailTextLabel?.text = "\(player.team)"
+        //cell.textLabel?.text = player.name
+        //cell.detailTextLabel?.text = "\(player.team)"
+        
+        //Configure the cell with the Player
+        cell.nameLabel.text = player.name
+        cell.teamLabel.text = player.team
+        cell.ageLabel.text = String(player.age)
         
         return cell
     }
@@ -84,6 +91,11 @@ class PlayersViewController: UITableViewController {
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
+        
+        //tableView.rowHeight = 65
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 65
+        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,

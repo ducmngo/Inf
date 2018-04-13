@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A330E6FBB843B24188551DCD52F046A87616677A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5BBC25300C994DC9C3D285DCE139B04AEDF2DDEE" : 9223372036854775807,
+    "A330E6FBB843B24188551DCD52F046A87616677A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0BCDD1F6-633D-4F52-BE59-D69A881D84CD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5BBC25300C994DC9C3D285DCE139B04AEDF2DDEE" : "InfinitePlayerList\/InfinitePlayerList\/",
+    "A330E6FBB843B24188551DCD52F046A87616677A" : "InfinitePlayerList\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "InfinitePlayerList",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "InfinitePlayerList.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ducmngo\/InfinitePlayerList-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5BBC25300C994DC9C3D285DCE139B04AEDF2DDEE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ducmngo\/InfinitePlayerList-master.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A330E6FBB843B24188551DCD52F046A87616677A"
+    }
+  ]
+}

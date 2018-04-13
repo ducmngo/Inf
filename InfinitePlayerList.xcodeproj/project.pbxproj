@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733FA19120815336007509F1 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733FA19020815336007509F1 /* PlayerCell.swift */; };
 		7364BA31206D622C0061A08C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364BA30206D622C0061A08C /* AppDelegate.swift */; };
 		7364BA36206D622C0061A08C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7364BA34206D622C0061A08C /* Main.storyboard */; };
 		7364BA38206D622C0061A08C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7364BA37206D622C0061A08C /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		733FA19020815336007509F1 /* PlayerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
 		7364BA2D206D622C0061A08C /* InfinitePlayerList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfinitePlayerList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7364BA30206D622C0061A08C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7364BA35206D622C0061A08C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				7364BA5E206D62B20061A08C /* PlayersViewController.swift */,
 				7364BA62206D63130061A08C /* Player.swift */,
 				7364BA64206D63D70061A08C /* PlayerList.swift */,
+				733FA19020815336007509F1 /* PlayerCell.swift */,
 			);
 			path = InfinitePlayerList;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				7364BA65206D63D70061A08C /* PlayerList.swift in Sources */,
 				7364BA31206D622C0061A08C /* AppDelegate.swift in Sources */,
 				7364BA5F206D62B20061A08C /* PlayersViewController.swift in Sources */,
+				733FA19120815336007509F1 /* PlayerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +528,7 @@
 				7364BA57206D622C0061A08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7364BA58206D622C0061A08C /* Build configuration list for PBXNativeTarget "InfinitePlayerListTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +537,7 @@
 				7364BA5A206D622C0061A08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7364BA5B206D622C0061A08C /* Build configuration list for PBXNativeTarget "InfinitePlayerListUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +546,7 @@
 				7364BA5D206D622C0061A08C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
