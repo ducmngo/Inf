@@ -12,8 +12,9 @@ class PlayersViewController: UITableViewController {
   
     
     var playerList: PlayerList!
+    var imageStore: ImageStore!
     
-    @IBAction func addNewPlayer(_ sender: UIButton){
+    @IBAction func addNewPlayer(_ sender: UIBarButtonItem){
         // Make a new index path for the 0th section, last row
         //let lastRow = tableView.numberOfRows(inSection: 0)
         //let indexPath = IndexPath(row: lastRow, section: 0)
@@ -33,22 +34,22 @@ class PlayersViewController: UITableViewController {
         }
     }
     
-    @IBAction func toggleEditingMode(_ sender: UIButton){
+    //@IBAction func toggleEditingMode(_ sender: UIButton){
         //If you're in editing mode
-        if isEditing {
+    //    if isEditing {
             //change text of button to inform user of state
-            sender.setTitle("Edit", for: .normal)
+    //        sender.setTitle("Edit", for: .normal)
             
             // turn off editing mode
-            setEditing(false, animated: true)
-        } else {
+    //        setEditing(false, animated: true)
+    //    } else {
             // Change text of button to inform user of state
-            sender.setTitle("Done", for: .normal)
+    //        sender.setTitle("Done", for: .normal)
             
             //enter editing mode
-            setEditing(true, animated: true)
-        }
-    }
+     //       setEditing(true, animated: true)
+     //   }
+   // }
     
     override func tableView(_ tableView: UITableView,
                             numberOfRowsInSection section: Int) -> Int{
@@ -86,11 +87,11 @@ class PlayersViewController: UITableViewController {
         super.viewDidLoad()
         
         //Get the height of the status bar
-        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        //let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
-        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentInset = insets
-        tableView.scrollIndicatorInsets = insets
+        //let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        //tableView.contentInset = insets
+        //tableView.scrollIndicatorInsets = insets
         
         //tableView.rowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -119,6 +120,9 @@ class PlayersViewController: UITableViewController {
                 //Remove the player from the list
                 self.playerList.removePlayer(player)
                 
+                //Remove the player's image from the image store
+                self.imageStore.deleteImage(forKey: player.playerKey)
+                
                 //Also remove that row from the tble view with animation
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
                 
@@ -138,9 +142,9 @@ class PlayersViewController: UITableViewController {
     }
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-        //If the triggered segue is the "showItem" segue
+        //If the triggered segue is the "showPlayer" segue
         switch segue.identifier{
-        case "showItem"?:
+        case "showPlayer"?:
             //Figure out which row was just tapped
             if let row = tableView.indexPathForSelectedRow?.row{
                 
@@ -148,12 +152,25 @@ class PlayersViewController: UITableViewController {
                 let player = playerList.allPlayers[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.player = player
+                detailViewController.imageStore = imageStore
             }
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
     }
  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
+    required init?(coder aDecoder: NSCoder){
+        super.init(coder: aDecoder)
+        
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
     
 }
 

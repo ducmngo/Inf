@@ -12,17 +12,24 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let playerList = PlayerList()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let playerList = PlayerList()
+        //Create a list of soccer players
+        //let playerList = PlayerList()
+        
+        //Creae an ImageStore
+        let imageStore = ImageStore()
         
         //Access the PlayersViewController and set its player list
-        let playersController = window!.rootViewController as! PlayersViewController
+        //let playersController = window!.rootViewController as! PlayersViewController
+        let navController = window!.rootViewController as! UINavigationController
+        let playersController = navController.topViewController as! PlayersViewController
         playersController.playerList = playerList
-        
+        playersController.imageStore = imageStore
         return true
     }
 
@@ -34,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        let success = playerList.saveChanges()
+        if (success) {
+            print("Saved all of the Players")
+        } else {
+            print("Couldn't save any of the Players")
+        }
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {

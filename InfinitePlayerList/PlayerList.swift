@@ -12,7 +12,13 @@ class PlayerList{
     
     var allPlayers = [Player]()
     
-    /*
+    let playerArchiveURL: URL = {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.appendingPathComponent("players.archive")
+    }()
+    
+        /*
     init(){
         for _ in 0..<25{
             createPlayer()
@@ -20,6 +26,13 @@ class PlayerList{
     }
  
     */
+    
+    /*init(){
+        if let archivedPlayers = NSKeyedUnarchiver.unarchiveObject(withFile: playerArchiveURL.path) as? [Player] {
+        allPlayers = archivedPlayers
+        }
+    }
+ */
     
     init(){
         var aPlayer = Player.init(name:"Lionel Messi", age:30, team:"Barcelona FC")
@@ -97,7 +110,10 @@ class PlayerList{
         aPlayer = Player.init(name: "Antoine Griezmann", age: 27, team: "Atletico Madrid")
         allPlayers.append(aPlayer)
     
-        
+        if let archivedPlayers = NSKeyedUnarchiver.unarchiveObject(withFile: playerArchiveURL.path) as? [Player] {
+            allPlayers = archivedPlayers
+        }
+
     }
     
     
@@ -131,6 +147,18 @@ class PlayerList{
         allPlayers.insert(movedPlayer, at: toIndex)
         
     }
+    
+    func saveChanges() -> Bool {
+        print("Saving players to: \(playerArchiveURL.path)")
+        return NSKeyedArchiver.archiveRootObject(allPlayers, toFile: playerArchiveURL.path)
+    }
  
- 
+    func imageURL(forKey key: String) -> URL {
+        let documentsDirectories = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        
+        return documentDirectory.appendingPathComponent(key)
+    }
+    
+
 }

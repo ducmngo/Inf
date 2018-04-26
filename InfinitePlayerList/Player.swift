@@ -9,11 +9,12 @@
 
 
 import UIKit
-class Player: NSObject{
+class Player: NSObject, NSCoding{
     var name: String
     var team: String
     var age: Int
     var dateCreated: Date
+    let playerKey: String
     
     
     
@@ -23,6 +24,7 @@ class Player: NSObject{
         self.team = team
         self.age = age
         self.dateCreated = Date()
+        self.playerKey = UUID().uuidString
         
         super.init()
         
@@ -63,7 +65,23 @@ class Player: NSObject{
         }
     }
  
+    func encode(with aCoder: NSCoder){
+        aCoder.encode(name, forKey:"name")
+        aCoder.encode(dateCreated, forKey:"dateCreated")
+        aCoder.encode(playerKey, forKey:"playerKey")
+        aCoder.encode(team, forKey: "team")
+        aCoder.encode(age, forKey:"age")
+    }
  
+    required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        dateCreated = aDecoder.decodeObject(forKey: "dateCreated") as! Date
+        playerKey = aDecoder.decodeObject(forKey:"playerKey") as! String
+        team = aDecoder.decodeObject(forKey: "team") as! String
+        age = aDecoder.decodeInteger(forKey: "age")
+        
+        super.init()
+    }
  
 }
 
