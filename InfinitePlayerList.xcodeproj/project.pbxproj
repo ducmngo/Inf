@@ -17,6 +17,7 @@
 		7364BA5F206D62B20061A08C /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364BA5E206D62B20061A08C /* PlayersViewController.swift */; };
 		7364BA63206D63130061A08C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364BA62206D63130061A08C /* Player.swift */; };
 		7364BA65206D63D70061A08C /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7364BA64206D63D70061A08C /* PlayerList.swift */; };
+		736D21FD20919B4F00D37DF4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736D21FC20919B4F00D37DF4 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		7364BA5E206D62B20061A08C /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		7364BA62206D63130061A08C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7364BA64206D63D70061A08C /* PlayerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		736D21FC20919B4F00D37DF4 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				7364BA62206D63130061A08C /* Player.swift */,
 				7364BA64206D63D70061A08C /* PlayerList.swift */,
 				733FA19020815336007509F1 /* PlayerCell.swift */,
+				736D21FC20919B4F00D37DF4 /* DetailViewController.swift */,
 			);
 			path = InfinitePlayerList;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				7364BA63206D63130061A08C /* Player.swift in Sources */,
 				7364BA65206D63D70061A08C /* PlayerList.swift in Sources */,
 				7364BA31206D622C0061A08C /* AppDelegate.swift in Sources */,
+				736D21FD20919B4F00D37DF4 /* DetailViewController.swift in Sources */,
 				7364BA5F206D62B20061A08C /* PlayersViewController.swift in Sources */,
 				733FA19120815336007509F1 /* PlayerCell.swift in Sources */,
 			);
